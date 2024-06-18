@@ -90,6 +90,21 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
+  # Swap caps lock and esc keys
+  services.keyd = {
+	enable = true;
+	keyboards = {
+		default = {
+			ids = [ "*" ];
+			settings = {
+				main = {
+					capslock = "overload(control, esc)";
+				};
+			};
+		};
+	};
+  };
+
   # Install firefox.
   programs.firefox.enable = true;
 
