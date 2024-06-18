@@ -116,6 +116,7 @@
   	pkgs.neovim
 	pkgs.git
 	pkgs.keyd
+	pkgs.bun
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
