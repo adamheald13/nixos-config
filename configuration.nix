@@ -100,6 +100,7 @@
   #  wget
   	pkgs.neovim
 	pkgs.git
+	pkgs.keyd
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
