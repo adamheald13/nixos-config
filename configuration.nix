@@ -1,8 +1,14 @@
 # Edit this configuration file to define what should be installed on your system.  Help is available in the configuration.nix(5) man page and in the NixOS manual (accessible by running ‘nixos-help’).
-{ config, pkgs, ... }: {
+{ config, lib, pkgs, ... }: {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+    ];
+
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      # Add additional package names here
+      "obsidian"
     ];
 
   # Bootloader.
@@ -118,6 +124,7 @@
 	pkgs.keyd
 	pkgs.bun
 	pkgs.gcc
+	pkgs.obsidian
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
