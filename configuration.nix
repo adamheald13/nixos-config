@@ -128,6 +128,15 @@
 	pkgs.tmux
 	pkgs.unzip
 	pkgs.dmidecode
+	pkgs.gnumake
+	pkgs.nodejs_22
+
+	# LSP stuff
+	pkgs.stylua
+	pkgs.lua-language-server
+	pkgs.typescript
+	pkgs.nodePackages.typescript-language-server
+	pkgs.prettierd
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
