@@ -130,6 +130,9 @@
 	pkgs.dmidecode
 	pkgs.gnumake
 	pkgs.nodejs_22
+	pkgs.mullvad-vpn
+	pkgs.qbittorrent
+	pkgs.wl-clipboard
 
 	# LSP stuff
 	pkgs.stylua
@@ -137,6 +140,7 @@
 	pkgs.typescript
 	pkgs.nodePackages.typescript-language-server
 	pkgs.prettierd
+	pkgs.nodePackages."@astrojs/language-server"
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -157,6 +161,7 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  services.mullvad-vpn.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
